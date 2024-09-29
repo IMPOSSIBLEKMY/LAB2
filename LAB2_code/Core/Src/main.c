@@ -237,6 +237,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		HAL_GPIO_TogglePin(RED_GPIO_Port, RED_Pin);
 	}
 
+
 	ex1_counter--;
 	if(ex1_counter <= 0)
 	{
@@ -245,16 +246,16 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		{
 		case 1:
 		{
-			HAL_GPIO_TogglePin(EN0_GPIO_Port, EN0_Pin);
-			HAL_GPIO_TogglePin(EN1_GPIO_Port, EN1_Pin);
+			HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_SET);
 			display7SEG(1);
 			state = 2;
 			break;
 		}
 		case 2:
 		{
-			HAL_GPIO_TogglePin(EN0_GPIO_Port, EN0_Pin);
-			HAL_GPIO_TogglePin(EN1_GPIO_Port, EN1_Pin);
+			HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_RESET);
 			display7SEG(2);
 			state = 1;
 			break;
