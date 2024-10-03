@@ -46,7 +46,7 @@ TIM_HandleTypeDef htim2;
 const int MAX_LED = 4;
 int index_led = 0;
 int led_buffer[4] = {1, 2, 3, 4};
-uint8_t matrix_buffer[8] = {0x3f, 0x3f, 0xf0, 0xf0, 0xff, 0xff, 0x33, 0x33};
+uint8_t matrix_buffer[8] = {0x18, 0x3c, 0x66, 0x66, 0x7e, 0x7e, 0x66, 0x66};
 int hour = 15, minute = 8, second = 50;
 /* USER CODE END PV */
 
@@ -156,7 +156,7 @@ int main(void)
   setTimer0(500);
   setTimer1(1000);
   resetLEDMatrix();
-  setTimer2(50);
+  setTimer2(100);
   HAL_TIM_Base_Start_IT(&htim2);
   /* USER CODE END 2 */
 
@@ -173,7 +173,7 @@ int main(void)
 		  }
 
 		  updateLEDMatrix(another_index++);
-		  setTimer2(50);
+		  setTimer2(100);
 	  }
 
 	  if(timer0_flag == 1)

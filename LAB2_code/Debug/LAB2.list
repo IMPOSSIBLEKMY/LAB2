@@ -308,8 +308,8 @@ int main(void)
  80002a0:	f7ff ff6e 	bl	8000180 <setTimer1>
   resetLEDMatrix();
  80002a4:	f000 fb72 	bl	800098c <resetLEDMatrix>
-  setTimer2(50);
- 80002a8:	2032      	movs	r0, #50	; 0x32
+  setTimer2(100);
+ 80002a8:	2064      	movs	r0, #100	; 0x64
  80002aa:	f7ff ff83 	bl	80001b4 <setTimer2>
   HAL_TIM_Base_Start_IT(&htim2);
  80002ae:	482f      	ldr	r0, [pc, #188]	; (800036c <main+0x100>)
@@ -341,8 +341,8 @@ int main(void)
  80002ca:	607a      	str	r2, [r7, #4]
  80002cc:	4618      	mov	r0, r3
  80002ce:	f000 fb93 	bl	80009f8 <updateLEDMatrix>
-		  setTimer2(50);
- 80002d2:	2032      	movs	r0, #50	; 0x32
+		  setTimer2(100);
+ 80002d2:	2064      	movs	r0, #100	; 0x64
  80002d4:	f7ff ff6e 	bl	80001b4 <setTimer2>
 	  }
 
